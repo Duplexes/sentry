@@ -1,0 +1,15 @@
+# Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
+v: 0
+micros:
+  - name: sentry
+    src: ./
+    engine: python3.9
+    primary: true
+    public: true
+    actions:
+      - id: "check"
+        name: "SEC Check"
+        description: "Cleans up unused data"
+        trigger: "schedule"
+        default_interval: "0/15 * * * *"
+
